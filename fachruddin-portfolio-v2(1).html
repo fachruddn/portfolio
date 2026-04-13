@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fachruddin — IT Operations Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Space+Grotesk:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1a1f2e;
+    --bg-dark: #131720;
+    --bg-card: #1e2535;
+    --bg-card2: #222a3a;
+    --white: #f0ede8;
+    --white-dim: rgba(240,237,232,0.7);
+    --white-faint: rgba(240,237,232,0.35);
+    --accent: #e8e0d0;
+    --gold: #c9a96e;
+    --gold-dim: rgba(201,169,110,0.15);
+    --border: rgba(240,237,232,0.1);
+    --border-hover: rgba(240,237,232,0.25);
+    --circle: rgba(240,237,232,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
+  }
+
+
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 56px;
+    background: rgba(26,31,46,0.7);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo-icon {
+    width: 28px; height: 28px;
+    background: var(--white);
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+    opacity: 0.9;
+  }
+
+  .nav-brand-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--white-dim);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--bg);
+    background: var(--white);
+    border: none;
+    padding: 10px 28px;
+    border-radius: 50px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .nav-cta:hover {
+    background: var(--gold);
+    color: var(--bg-dark);
+  }
+
+  /* ═══ HERO ═══ */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0 56px;
+  }
+
+  /* Background decorative circles */
+  .hero-circles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .hero-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--circle);
+  }
+
+  .hc1 { width: 600px; height: 600px; top: -150px; right: -150px; }
+  .hc2 { width: 400px; height: 400px; top: 50px; right: 50px; }
+  .hc3 { width: 200px; height: 200px; top: 200px; right: 250px; }
+  .hc4 { width: 800px; height: 800px; bottom: -300px; left: -200px; opacity: 0.4; }
+
+  /* Abstract wavy lines like in the reference */
+  .hero-wave {
+    position: absolute;
+    bottom: 120px;
+    left: 56px;
+    width: 300px;
+    opacity: 0.15;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding-top: 80px;
+  }
+
+  .hero-greeting {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 2vw, 22px);
+    font-weight: 400;
+    color: var(--white-dim);
+    margin-bottom: 10px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(64px, 10vw, 110px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 0.95;
+    margin-bottom: 16px;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold);
+  }
+
+  /* Underline squiggle under name, like reference image */
+  .hero-underline {
+    width: 200px;
+    height: 14px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.8s 0.2s ease both;
+    opacity: 0.5;
+  }
+
+  .hero-role {
+    font-size: 15px;
+    color: var(--white-dim);
+    line-height: 1.7;
+    max-width: 420px;
+    margin-bottom: 48px;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .hero-role strong { color: var(--white); font-weight: 500; }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+
+  .btn-resume {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--bg);
+    background: var(--white);
+    padding: 16px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background 0.25s, transform 0.2s;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-resume:hover {
+    background: var(--gold);
+    transform: translateY(-2px);
+  }
+
+  .btn-resume svg { width: 16px; height: 16px; }
+
+  
+
+  /* Right-side social icons — vertical floating on right */
+  .hero-socials {
+    position: absolute;
+    right: 56px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    animation: fadeUp 0.8s 0.5s ease both;
+  }
+
+  /* Connecting line */
+  .hero-socials::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -80px;
+    width: 1px;
+    height: 70px;
+    background: linear-gradient(to bottom, transparent, var(--border-hover));
+  }
+
+  .social-circle {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    border: 1px solid var(--border-hover);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    text-decoration: none;
+    color: var(--white-dim);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .social-circle:hover {
+    background: rgba(240,237,232,0.1);
+    border-color: var(--white-dim);
+    color: var(--white);
+    transform: scale(1.1);
+  }
+
+  /* Scroll to top */
+  .scroll-top {
+    position: fixed;
+    right: 56px;
+    bottom: 40px;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: rgba(240,237,232,0.08);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    z-index: 100;
+    text-decoration: none;
+    color: var(--white-dim);
+    font-size: 18px;
+  }
+
+  .scroll-top:hover { background: rgba(240,237,232,0.15); }
+
+  /* Hero stats strip */
+  .hero-stats-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    background: rgba(240,237,232,0.04);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .hstat {
+    flex: 1;
+    max-width: 200px;
+    padding: 24px 32px;
+    border-right: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .hstat:last-child { border-right: none; }
+
+  .hstat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--white);
+    display: block;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .hstat-label {
+    font-size: 11px;
+    color: var(--white-faint);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ═══ SECTIONS ═══ */
+  section {
+    padding: 100px 56px;
+    position: relative;
+  }
+
+  .section-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-eyebrow::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 60px;
+  }
+
+  .section-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold);
+  }
+
+  /* ═══ SERVICES/SKILLS ═══ */
+  #skills { background: var(--bg-dark); }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .skill-card {
+    background: var(--bg-dark);
+    padding: 44px 36px;
+    transition: background 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--gold), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .skill-card:hover { background: var(--bg-card); }
+  .skill-card:hover::before { transform: scaleX(1); }
+
+  .skill-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    color: rgba(240,237,232,0.05);
+    line-height: 1;
+    margin-bottom: -10px;
+    user-select: none;
+  }
+
+  .skill-icon-wrap {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    background: var(--gold-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .skill-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+
+  .skill-desc {
+    font-size: 13px;
+    color: var(--white-dim);
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .stag {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--gold);
+    background: var(--gold-dim);
+    border: 1px solid rgba(201,169,110,0.2);
+    padding: 4px 12px;
+    border-radius: 50px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ═══ CASE STUDIES ═══ */
+  #cases { background: var(--bg); }
+
+  .case-list { display: flex; flex-direction: column; gap: 1px; }
+
+  .case-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .case-item:hover { border-color: var(--border-hover); }
+
+  .case-header {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    align-items: center;
+    gap: 28px;
+    padding: 32px 40px;
+    cursor: pointer;
+  }
+
+  .case-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-style: italic;
+    color: rgba(240,237,232,0.1);
+    line-height: 1;
+  }
+
+  .case-meta h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--white);
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+
+  .case-meta span {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+  }
+
+  .case-toggle {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--white-dim);
+    transition: transform 0.3s, background 0.2s;
+    user-select: none;
+  }
+
+  .case-item.open .case-toggle {
+    transform: rotate(45deg);
+    background: var(--gold-dim);
+    border-color: rgba(201,169,110,0.3);
+    color: var(--gold);
+  }
+
+  .case-body { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+  .case-item.open .case-body { max-height: 600px; }
+
+  .case-inner {
+    padding: 0 40px 40px 148px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    border-top: 1px solid var(--border);
+    padding-top: 32px;
+  }
+
+  .case-block h4 {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .case-block p { font-size: 13px; color: var(--white-dim); line-height: 1.8; }
+
+  .case-result {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  /* ═══ EXPERIENCE ═══ */
+  #experience { background: var(--bg-dark); }
+
+  .timeline { position: relative; padding-left: 40px; }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 40px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    opacity: 0.4;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -46px; top: 10px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 16px rgba(201,169,110,0.5);
+    border: 2px solid var(--bg-dark);
+  }
+
+  .timeline-period {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+
+  .timeline-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--white);
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+
+  .timeline-company {
+    font-size: 13px;
+    color: var(--white-faint);
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .timeline-points { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+  .timeline-points li {
+    font-size: 13px;
+    color: var(--white-dim);
+    padding-left: 18px;
+    position: relative;
+    line-height: 1.7;
+  }
+
+  .timeline-points li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 10px;
+    width: 5px; height: 1px;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+
+  /* ═══ TOOLS ═══ */
+  #tools { background: var(--bg); }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+  }
+
+  .tool-pill {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: border-color 0.25s, background 0.25s, transform 0.2s;
+  }
+
+  .tool-pill:hover {
+    border-color: rgba(201,169,110,0.3);
+    background: var(--gold-dim);
+    transform: translateY(-3px);
+  }
+
+  .tool-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--white);
+  }
+
+  .tool-cat {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--white-faint);
+    letter-spacing: 0.04em;
+  }
+
+  /* ═══ CONTACT ═══ */
+  #contact {
+    background: var(--bg-dark);
+    text-align: center;
+  }
+
+  .contact-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .contact-email {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 38px);
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+    margin: 28px 0 48px;
+    transition: color 0.2s;
+    font-style: italic;
+  }
+
+  .contact-email:hover { color: var(--gold); }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .contact-btn {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--white-dim);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: 12px 28px;
+    border-radius: 50px;
+    letter-spacing: 0.06em;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+    cursor: none;
+  }
+
+  .contact-btn:hover {
+    color: var(--bg);
+    border-color: var(--white);
+    background: var(--white);
+  }
+
+  /* ═══ FOOTER ═══ */
+  footer {
+    text-align: center;
+    padding: 28px 56px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--white-faint);
+    border-top: 1px solid var(--border);
+    background: var(--bg-dark);
+    letter-spacing: 0.08em;
+  }
+
+  /* ═══ ANIMATIONS ═══ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ═══ RESPONSIVE ═══ */
+  @media (max-width: 900px) {
+    nav { padding: 18px 24px; }
+    .nav-links { display: none; }
+    #hero { padding: 0 24px; }
+    .hero-name { font-size: 56px; }
+    .hero-socials { display: none; }
+    section { padding: 70px 24px; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .case-inner { grid-template-columns: 1fr; padding-left: 0; }
+    .hstat { padding: 16px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-brand">
+    <div class="nav-logo-icon"></div>
+    <span class="nav-brand-name">Fachruddin</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#skills">Service</a></li>
+    <li><a href="#cases">Case Study</a></li>
+    <li><a href="#experience">Pengalaman</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:fachruddin@email.com" class="nav-cta">Hire Me »</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-circles">
+    <div class="hero-circle hc1"></div>
+    <div class="hero-circle hc2"></div>
+    <div class="hero-circle hc3"></div>
+    <div class="hero-circle hc4"></div>
+  </div>
+
+  <!-- Squiggly wave background decoration -->
+  <svg class="hero-wave" viewBox="0 0 300 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 15 Q37.5 0 75 15 T150 15 T225 15 T300 15" stroke="white" stroke-width="1" fill="none" opacity="1"/>
+    <path d="M0 22 Q37.5 8 75 22 T150 22 T225 22 T300 22" stroke="white" stroke-width="0.6" fill="none" opacity="0.5"/>
+  </svg>
+
+  <div class="hero-content">
+    <p class="hero-greeting">Hello! Saya</p>
+    <h1 class="hero-name">Fachruddin<br><em>IT Ops</em></h1>
+
+    <!-- Decorative underline like reference image -->
+    <svg class="hero-underline" viewBox="0 0 200 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 10 C20 4, 40 14, 60 8 C80 2, 100 12, 120 7 C140 2, 160 11, 180 7 C190 4, 196 8, 200 6" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </svg>
+
+    <p class="hero-role">
+      <strong>IT Operations Specialist</strong> spesialisasi di Helpdesk Support,<br>
+      IT Asset Management, dan SAP-based Procurement.
+    </p>
+
+    <div class="hero-actions">
+      <a href="Fachruddin_CV_v3.pdf" download class="btn-resume">
+        Get Resume
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 1v9M4 6l4 4 4-4M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    
+    </div>
+  </div>
+
+  <!-- Social icons right side (like reference) -->
+  <div class="hero-socials">
+    <a href="https://linkedin.com/in/fachruddin-profile" target="_blank" class="social-circle" title="LinkedIn">in</a>
+    <a href="mailto:fachruddin@email.com" class="social-circle" title="Email">@</a>
+    <a href="#" class="social-circle" title="CV">CV</a>
+  </div>
+
+  <!-- Stats bar at bottom of hero -->
+  <div class="hero-stats-bar">
+    <div class="hstat">
+      <span class="hstat-num">5+</span>
+      <span class="hstat-label">Tahun Pengalaman</span>
+    </div>
+    <div class="hstat">
+      <span class="hstat-num">95%+</span>
+      <span class="hstat-label">Resolution Rate</span>
+    </div>
+    <div class="hstat">
+      <span class="hstat-num">4.000+</span>
+      <span class="hstat-label">Perangkat Dikelola</span>
+    </div>
+    <div class="hstat">
+      <span class="hstat-num">500+</span>
+      <span class="hstat-label">User Didukung</span>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS / SERVICE -->
+<section id="skills">
+  <div class="section-eyebrow">Kompetensi Utama</div>
+  <div class="section-title">Tiga Pilar<br><em>Keahlian</em></div>
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <div class="skill-num">01</div>
+      <div class="skill-icon-wrap">🖥️</div>
+      <div class="skill-name">IT Helpdesk & Operations</div>
+      <p class="skill-desc">Mengelola 30+ tiket harian dengan sistem OTRS, memberikan L1/L2 support untuk 500+ pengguna dengan SLA compliance yang konsisten.</p>
+      <div class="skill-tags">
+        <span class="stag">OTRS Ticketing</span>
+        <span class="stag">L1/L2 Support</span>
+        <span class="stag">SLA Management</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-num">02</div>
+      <div class="skill-icon-wrap">📦</div>
+      <div class="skill-name">IT Asset Management</div>
+      <p class="skill-desc">Mengelola lifecycle 4.000+ perangkat enterprise — dari procurement, deployment, hingga disposal — termasuk dokumentasi audit dan SOP operasional.</p>
+      <div class="skill-tags">
+        <span class="stag">Asset Lifecycle</span>
+        <span class="stag">Audit Compliance</span>
+        <span class="stag">SOP Development</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-num">03</div>
+      <div class="skill-icon-wrap">⚙️</div>
+      <div class="skill-name">SAP Procurement</div>
+      <p class="skill-desc">End-to-end procurement workflow via SAP — mulai Purchase Requisition, Purchase Order, hingga Goods Receipt — dengan integrasi lintas tim.</p>
+      <div class="skill-tags">
+        <span class="stag">SAP PR/PO/GR</span>
+        <span class="stag">Vendor Coordination</span>
+        <span class="stag">Cross-functional</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="cases">
+  <div class="section-eyebrow">Portfolio Kerja</div>
+  <div class="section-title">Case <em>Study</em></div>
+  <div class="case-list">
+
+    <div class="case-item" onclick="toggleCase(this)">
+      <div class="case-header">
+        <div class="case-num">01</div>
+        <div class="case-meta">
+          <h3>Optimasi Helpdesk & Knowledge Base</h3>
+          <span>PT Global Digital Niaga (Blibli) · 2022–2024</span>
+        </div>
+        <div class="case-toggle">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-inner">
+          <div class="case-block">
+            <h4>Masalah</h4>
+            <p>Volume tiket tinggi (30+/hari) tanpa dokumentasi resolusi yang terstruktur, menyebabkan waktu penyelesaian berulang untuk isu yang sama.</p>
+          </div>
+          <div class="case-block">
+            <h4>Solusi</h4>
+            <p>Membangun knowledge base di OTRS dengan template resolusi untuk isu-isu berulang, mempersingkat proses eskalasi L1→L2.</p>
+          </div>
+          <div class="case-block">
+            <h4>Hasil</h4>
+            <div class="case-result">95%+</div>
+            <p>Incident resolution rate tercapai secara konsisten untuk 500+ pengguna.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-item" onclick="toggleCase(this)">
+      <div class="case-header">
+        <div class="case-num">02</div>
+        <div class="case-meta">
+          <h3>IT Asset Lifecycle & SAP Integration</h3>
+          <span>PT Bina Sarana Sukses · 2025–2026</span>
+        </div>
+        <div class="case-toggle">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-inner">
+          <div class="case-block">
+            <h4>Masalah</h4>
+            <p>Discrepancy data antara SAP dan Asset Management System internal, menyulitkan audit dan monitoring real-time.</p>
+          </div>
+          <div class="case-block">
+            <h4>Solusi</h4>
+            <p>Koordinasi end-to-end procurement via SAP (PR/PO/GR) dan pengembangan SOP tracking aset untuk seluruh tim.</p>
+          </div>
+          <div class="case-block">
+            <h4>Hasil</h4>
+            <div class="case-result">4.000+</div>
+            <p>Perangkat enterprise terkelola dengan akurasi data yang meningkat dan audit readiness terjaga.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-item" onclick="toggleCase(this)">
+      <div class="case-header">
+        <div class="case-num">03</div>
+        <div class="case-meta">
+          <h3>SQL Reporting & Active Directory Management</h3>
+          <span>PT Sunindo Kookmin Best Finance · 2020–2022</span>
+        </div>
+        <div class="case-toggle">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-inner">
+          <div class="case-block">
+            <h4>Masalah</h4>
+            <p>Laporan operasional dibuat manual, lambat, dan tidak konsisten. Provisioning user baru tanpa standarisasi.</p>
+          </div>
+          <div class="case-block">
+            <h4>Solusi</h4>
+            <p>SQL queries untuk laporan otomatis mingguan dan standardisasi provisioning user via Active Directory.</p>
+          </div>
+          <div class="case-block">
+            <h4>Hasil</h4>
+            <div class="case-result">200+</div>
+            <p>Karyawan terkelola via Active Directory dengan laporan mingguan yang lebih cepat dan akurat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-eyebrow">Riwayat Kerja</div>
+  <div class="section-title">Pengalaman<br><em>Profesional</em></div>
+  <div class="timeline">
+
+    <div class="timeline-item reveal">
+      <div class="timeline-period">Jun 2025 — Feb 2026</div>
+      <div class="timeline-role">IT Asset Management & Business Process Owner</div>
+      <div class="timeline-company">PT Bina Sarana Sukses</div>
+      <ul class="timeline-points">
+        <li>Mengelola lifecycle 4.000+ perangkat enterprise: procurement, deployment, maintenance</li>
+        <li>Koordinasi procurement end-to-end via SAP (PR/PO/GR) dan sinkronisasi dengan Asset Management System internal</li>
+        <li>Pengembangan SOP asset tracking untuk mendukung audit readiness dan kepatuhan operasional</li>
+        <li>Kolaborasi lintas tim: finance, logistik, dan IT untuk akurasi data aset</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-period">Agu 2022 — Des 2024</div>
+      <div class="timeline-role">IT Technical Support Helpdesk</div>
+      <div class="timeline-company">PT Global Digital Niaga (Blibli)</div>
+      <ul class="timeline-points">
+        <li>Menangani 30+ tiket IT support harian via sistem OTRS dengan resolution rate 95%+</li>
+        <li>L1/L2 troubleshooting untuk 500+ pengguna: enterprise apps, hardware, dan network infrastructure</li>
+        <li>Membangun knowledge base resolusi isu berulang untuk mempercepat waktu penanganan</li>
+        <li>Koordinasi dengan tim infrastruktur untuk menjaga stabilitas layanan IT antar departemen</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-period">Nov 2020 — Jul 2022</div>
+      <div class="timeline-role">IT Support & Development Staff</div>
+      <div class="timeline-company">PT Sunindo Kookmin Best Finance</div>
+      <ul class="timeline-points">
+        <li>Mengelola infrastruktur IT enterprise: Active Directory, shared folder, printer, LAN system</li>
+        <li>Provisioning dan manajemen akun 200+ karyawan via Active Directory</li>
+        <li>Merancang SQL queries untuk laporan operasional mingguan yang mendukung pengambilan keputusan manajemen</li>
+        <li>Instalasi dan konfigurasi hardware, software, dan perangkat jaringan</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="section-eyebrow">Stack & Tools</div>
+  <div class="section-title">Teknologi yang<br><em>Dikuasai</em></div>
+  <div class="tools-grid">
+    <div class="tool-pill reveal"><span class="tool-name">SAP ERP</span><span class="tool-cat">PR · PO · GR Workflow</span></div>
+    <div class="tool-pill reveal"><span class="tool-name">OTRS</span><span class="tool-cat">Ticketing System</span></div>
+    <div class="tool-pill reveal"><span class="tool-name">Active Directory</span><span class="tool-cat">User Management</span></div>
+    <div class="tool-pill reveal"><span class="tool-name">SQL Query</span><span class="tool-cat">Reporting & Analysis</span></div>
+    <div class="tool-pill reveal"><span class="tool-name">Windows Admin</span><span class="tool-cat">OS & Infrastructure</span></div>
+    <div class="tool-pill reveal"><span class="tool-name">MS Office</span><span class="tool-cat">Word · Excel · PowerPoint</span></div>
+    <div class="tool-pill reveal"><span class="tool-name">LAN / Network</span><span class="tool-cat">Setup & Troubleshooting</span></div>
+    <div class="tool-pill reveal"><span class="tool-name">SOP Writing</span><span class="tool-cat">Dokumentasi Operasional</span></div>
+    <div class="tool-pill reveal"><span class="tool-name">Hardware Config</span><span class="tool-cat">PC · Printer · Network Device</span></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-eyebrow" style="justify-content:center;">Mari Terhubung</div>
+    <div class="section-title">Terbuka untuk<br><em>Peluang Baru</em></div>
+    <a href="mailto:fachruddin@email.com" class="contact-email">fachruddin@email.com</a>
+    <div class="contact-links">
+      <a href="https://linkedin.com/in/fachruddin-profile" target="_blank" class="contact-btn">LinkedIn</a>
+      <a href="https://wa.me/6285155299938" target="_blank" class="contact-btn">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Fachruddin · IT Operations Specialist · Jakarta, Indonesia
+</footer>
+
+<a href="#hero" class="scroll-top">↑</a>
+
+<script>
+  // Case study toggle
+  function toggleCase(el) {
+    el.classList.toggle('open');
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  reveals.forEach(r => obs.observe(r));
+</script>
+</body>
+</html>
